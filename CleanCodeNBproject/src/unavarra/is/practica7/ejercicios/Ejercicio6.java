@@ -1,87 +1,26 @@
 package unavarra.is.practica7.ejercicios;
 
+// Paso 1: Crear la clase "Dni"
 public class Ejercicio6 {
-    
-        public static char DNI(int dni){
-        char resul = 'T';
-        Integer r = dni%23;
-        switch(r){
-            case 0:
-                resul = 'T';
-                break;
-            case 1:
-                resul = 'R';
-                break;
-            case 2:
-                resul = 'W';
-                break;
-            case 3:
-                resul = 'A';
-                break;
-            case 4:
-                resul = 'G';
-                break;
-            case 5:
-                resul = 'M';
-                break;
-            case 6:
-                resul = 'Y';
-                break;
-            case 7:
-                resul = 'F';
-                break;
-            case 8:
-                resul = 'P';
-                break;
-            case 9:
-                resul = 'D';
-                break;
-            case 10:
-                resul = 'X';
-                break;
-            case 11:
-                resul = 'B';
-                break;
-            case 12:
-                resul = 'N';
-                break;
-            case 13:
-                resul = 'J';
-                break;
-            case 14:
-                resul = 'Z';
-                break;
-            case 15:
-                resul = 'S';
-                break;
-            case 16:
-                resul = 'Q';
-                break;
-            case 17:
-                resul = 'V';
-                break;
-            case 18:
-                resul = 'H';
-                break;
-            case 19:
-                resul = 'L';
-                break;
-            case 20:
-                resul = 'C';
-                break;          
-            case 21:
-                resul = 'K';
-                break;          
-            case 22:
-                resul = 'E';
-                break;
-        }
-        return resul;
+
+    // Método para obtener la letra del DNI
+    public static char obtenerLetra(int dni) {
+        // Paso 3: Sustituir el switch por un String y usar charAt
+        String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        return letras.charAt(dni % 23);
     }
 
+    // Método público para validar un DNI completo con número y letra
+    public static boolean validarDni(int dni, char letra) {
+        return obtenerLetra(dni) == Character.toUpperCase(letra);
+    }
 
     public static void main(String[] args) {
-        System.out.println(DNI(72700123)); 
+        // Prueba del método obtenerLetra
+        System.out.println(obtenerLetra(72700123)); // T
+
+        // Prueba del método validarDni
+        System.out.println(validarDni(72700123, 'T')); // true
+        System.out.println(validarDni(72700123, 'R')); // false
     }
-    
 }

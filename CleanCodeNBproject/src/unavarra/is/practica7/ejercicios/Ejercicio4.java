@@ -2,54 +2,22 @@ package unavarra.is.practica7.ejercicios;
 
 public class Ejercicio4 {
     
-    public static String Dia(int d){
-        String resul = "";
-        if(d<=0){
-            resul = "dia incorrecto";
+    // Paso 1: Cambiar la firma del método para hacerlo más semántico
+    public static String obtenerDiaDeLaSemana(int dia) {
+        // Paso 3: Usar un array de String para representar los días de la semana
+        String[] dias = {"lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"};
+
+        // Validar el rango del parámetro
+        if (dia < 1 || dia > 7) {
+            return "día incorrecto";
         }
-        else {
-            if(d==1){
-                resul = "lunes";
-            } 
-            else{
-                if(d==2){
-                    resul = "martes";
-                } 
-                else{
-                    if(d==3){
-                        resul = "miercoles";
-                    } 
-                    else{
-                        if(d==4){
-                            resul = "jueves";
-                        } 
-                        else{
-                            if(d==5){
-                                resul = "viernes";
-                            } 
-                            else{
-                                if(d==6){
-                                    resul = "sabado";
-                                } 
-                                else{
-                                    if(d==7){
-                                        resul = "domingo";
-                                    }
-                                    else{
-                                        resul = "dia incorrecto";
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return resul;
+        
+        // Usar el índice del array para devolver el día correspondiente
+        return dias[dia - 1];
     }
 
     public static void main(String[] args) {
-        System.out.println(Dia(3));
+        System.out.println(obtenerDiaDeLaSemana(3));  // miércoles
+        System.out.println(obtenerDiaDeLaSemana(8));  // día incorrecto
     }
-    
 }

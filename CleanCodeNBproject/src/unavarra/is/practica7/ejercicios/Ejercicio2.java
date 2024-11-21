@@ -2,21 +2,14 @@ package unavarra.is.practica7.ejercicios;
 
 public class Ejercicio2 {
     
-    public static Boolean par(int n){
-        Boolean resul = false;
-        Integer r = n % 2;
-        if(r==0){ 
-            resul = true; 
-        }
-        else {
-            resul = false;
-        }
-        return resul;
+    // Paso 1: Cambiar el nombre del método para reflejar que devuelve un booleano
+    public static Boolean esPar(int numero) {
+        // Paso 2: Simplificar el método a una sola línea
+        return numero % 2 == 0;
     }
 
     public static void main(String[] args) {
-        System.out.println(par(2));
-        System.out.println(par(3));
+        System.out.println(esPar(2)); // true
+        System.out.println(esPar(3)); // false
     }
-    
 }
